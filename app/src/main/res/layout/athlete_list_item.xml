@@ -1,0 +1,43 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="athleteItemViewModel"
+            type="com.demo.athletes.viewmodel.AthleteItemViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/item_athlete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{athleteItemViewModel::onItemClick}"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:id="@+id/athlete_imageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/profile_user"
+            tools:imageUrl="@{athleteItemViewModel.circlePictureProfile}" />
+
+
+        <TextView
+            android:id="@+id/athlete_name_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/athlete_imageView"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/athlete_imageView"
+            android:text="@{athleteItemViewModel.name}"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="mr gary allen" />
+    </RelativeLayout>
+
+</layout>
